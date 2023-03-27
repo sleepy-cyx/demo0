@@ -34,27 +34,7 @@ demo1::demo1(QWidget *parent) :
 
 }
 //初始化有关点的变量
-void demo1:: pointInit()
-{
 
-}
-bool demo1::isIntersect(edge *E1, edge *E2) //非端点处相交
-{
-
-    double x1 = E1->Origin()->GetX();
-    double y1 = E1->Origin()->GetY();
-    double x2 = E1->Terminal()->GetX();
-    double y2 = E1->Terminal()->GetY();
-    double x3 = E2->Origin()->GetX();
-    double y3 = E2->Origin()->GetY();
-    double x4 = E2->Terminal()->GetX();
-    double y4 = E2->Terminal()->GetY();
-    if (max(x1, x2) < min(x3, x4) || max(x3, x4) < min(x1, x2) || max(y1, y2) < min(y3, y4) || max(y3, y4) < min(y1, y2))
-    {
-        return false;
-    }
-    return (((((x1 - x3) * (y4 - y3)) - ((x4 - x3) * (y1 - y3))) * (((x2 - x3) * (y4 - y3)) - ((x4 - x3) * (y2 - y3)))) < 0);
-}
 //最短路径-dijkstra
  QVector<int> demo1::shortest_path(QVector<node*> graph,int start,int end)
  {
